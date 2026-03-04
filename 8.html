@@ -85,16 +85,29 @@
 
                 var gSelected = false;
                 for (var i=0; i < gender.length; i++){
-                    if(gender[i].checked){
+                    if(gender[i].checked)
                         gSelected = true;
                         
                         if (!gSelected){
                             alert("Select at least one gender");
                             return false;
                     }
+                }
 
                     if (isNaN(dd) || dd < 1 || dd > 31 || isNaN(mm) || mm < 1 || mm > 12 || isNaN(yyyy) || yyyy < 1900 || yyyy > new Date().getFullYear()) {
-                        alert("Invalid day");
+                        alert("Invalid date of birth");
+                        return false;
+                    }
+
+                    var dSelected = false;
+                    for (var i = 0; i < degree.length; i++) {
+                        if (degree[i].checked) {
+                            dSelected = true;
+                        }
+                    }
+
+                    if (!dSelected) {
+                        alert("Select degree");
                         return false;
                     }
 
@@ -104,7 +117,7 @@
                 }
 
                 if (photo === "") {
-                    alert("Please select a photo");
+                    alert("Please upload a photo");
                     return false;
                 }
             }
